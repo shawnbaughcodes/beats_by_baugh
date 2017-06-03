@@ -1,5 +1,36 @@
-<div class="app_container col s12 m6 l3">
-    <div class="app_image_header">
-        <img src="img/beats_by_baugh_header.png" alt="Header Image">
+<div class="col s12 m6 l3">
+    <!-- IMAGE HEADER DIV -->
+    <div class="col s12 m6 l3 app_image_header">
+        <!-- <img src="img/beats_by_baugh_header.png" alt="Header Image"> -->
     </div>
+    <!-- END -->
+    <!-- BEAT STORE -->
+    <div ng-controller='TracksController as TC' class="col s12 m6 l3 store">
+        <h3>All Productions</h3>
+        <!-- TRACKS -->
+        <div class="tracks">
+            <table id="track_heads">
+                <thead>
+                    <th>TITLE</th>
+                    <th>TIME</th>
+                    <th>PRODUCER</th>
+                    <th>TAGS</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody ng-repeat='track in TC.tracks'>
+                    <td>{{track.title}}</td>
+                    <td>{{track.time}}</td>
+                    <td>{{track.producer}}</td>
+                    <td>{{track.tags}}</td>
+                    <td><button>Share</button></td>
+                    <td>{{track.price}}</td>
+                    <td><button>Add To Cart</button></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END BEAT STORE -->
+    
 </div>
